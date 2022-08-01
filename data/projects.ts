@@ -1,13 +1,6 @@
-import elkLogo from "../logos/elk.png"
-import pngLogo from "../logos/png.png"
-import joeLogo from "../logos/joe.png"
-import ytsLogo from "../logos/yts.png"
-import pefiLogo from "../logos/pefi.png"
-import xavaLogo from "../logos/avalaunch.webp"
-import yakLogo from "../logos/yak.webp"
-import snowballLogo from "../logos/snowball.webp"
-import nftradeLogo from "../logos/nftrade.webp"
 import {Tag, TAGS} from "./tags";
+// @ts-ignore
+import logos from "./logos";
 
 export type Project = {
     slug: string
@@ -24,7 +17,7 @@ export const PROJECTS: Project[] = [
         url: "https://elk.finance",
         title: "Elk Finance",
         description: "An innovative bridge with DEX, staking with impermanent loss protection, and NFTs.",
-        logo: elkLogo,
+        logo: logos.elk,
         tags: [TAGS.DEX, TAGS.YIELD_FARM, TAGS.NFT, TAGS.BRIDGE]
     },
     {
@@ -32,7 +25,7 @@ export const PROJECTS: Project[] = [
         url: "https://pangolin.exchange",
         title: "Pangolin",
         description: "The first DEX on Avalanche. ",
-        logo: pngLogo,
+        logo: logos.png,
         tags: [TAGS.DEX, TAGS.YIELD_FARM]
     },
     {
@@ -40,7 +33,7 @@ export const PROJECTS: Project[] = [
         url: "https://traderjoe.xyz",
         title: "Trader Joe",
         description: "Avalanche's main DEX.",
-        logo: joeLogo,
+        logo: logos.joe,
         tags: [TAGS.DEX, TAGS.YIELD_FARM, TAGS.NFT, TAGS.NFT_MARKETPLACE, TAGS.LAUNCHPAD]
     },
     {
@@ -48,7 +41,7 @@ export const PROJECTS: Project[] = [
         url: "https://yetiswap.app",
         title: "YetiSwap",
         description: "An OG Avalanche DEX with NFT marketplace.",
-        logo: ytsLogo,
+        logo: logos.yts,
         tags: [TAGS.DEX, TAGS.YIELD_FARM, TAGS.NFT, TAGS.NFT_MARKETPLACE]
     },
     {
@@ -56,7 +49,7 @@ export const PROJECTS: Project[] = [
         url: "https://penguinfinance.io",
         title: "Penguin Finance",
         description: "A yield farm with games and other features.",
-        logo: pefiLogo,
+        logo: logos.pefi,
         tags: [TAGS.YIELD_FARM]
     },
     {
@@ -64,7 +57,7 @@ export const PROJECTS: Project[] = [
         url: "https://avalauch.app",
         title: "Avalaunch",
         description: "An OG Avalanche DEX with NFT marketplace.",
-        logo: xavaLogo,
+        logo: logos.xava,
         tags: [TAGS.YIELD_FARM, TAGS.LAUNCHPAD]
     },
     {
@@ -72,7 +65,7 @@ export const PROJECTS: Project[] = [
         url: "https://yieldyak.com",
         title: "Yield Yak",
         description: "An Avalanche-based yield optimizer and dex aggregator.",
-        logo: yakLogo,
+        logo: logos.yak,
         tags: [TAGS.YIELD_FARM, TAGS.DEX_AGGREGATOR, TAGS.YIELD_OPTIMIZER]
     },
     {
@@ -80,7 +73,7 @@ export const PROJECTS: Project[] = [
         url: "https://snowball.network",
         title: "Snowball Network",
         description: "A feature rich DAO with yield farming, yield optimization, and more.",
-        logo: snowballLogo,
+        logo: logos.snowball,
         tags: [TAGS.YIELD_FARM, TAGS.YIELD_OPTIMIZER, TAGS.NFT]
     },
     {
@@ -88,7 +81,15 @@ export const PROJECTS: Project[] = [
         url: "https://nftrade.com",
         title: "NFTrade",
         description: "A cross-chain NFT marketplace.",
-        logo: nftradeLogo,
+        logo: logos.nftrade,
+        tags: [TAGS.NFT, TAGS.NFT_MARKETPLACE]
+    },
+    {
+        slug: "kalao",
+        url: "https://kalao.io",
+        title: "Kalao",
+        description: "An Avalanche-based NFT marketplace with AR/VR integrations.",
+        logo: logos.kalao,
         tags: [TAGS.NFT, TAGS.NFT_MARKETPLACE]
     },
 ]

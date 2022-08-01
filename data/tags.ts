@@ -4,17 +4,21 @@ export type Tag = {
 }
 
 export const TAGS = {
+    BRIDGE: {
+        slug: "bridge",
+        title: "Bridge"
+    },
     DEX: {
         slug: "dex",
         title: "DEX"
     },
-    YIELD_FARM: {
-        slug: "yield-farm",
-        title: "Yield Farm"
+    DEX_AGGREGATOR: {
+        slug: "dex-aggregator",
+        title: "DEX aggregator"
     },
-    BRIDGE: {
-        slug: "bridge",
-        title: "Bridge"
+    LAUNCHPAD: {
+        slug :"launchpad",
+        title: "Launchpad"
     },
     NFT: {
         slug: "nft",
@@ -24,17 +28,12 @@ export const TAGS = {
         slug: "nft-marketplace",
         title: "NFT Marketplace"
     },
-    LAUNCHPAD: {
-        slug :"launchpad",
-        title: "Launchpad"
-    },
-    DEX_AGGREGATOR: {
-        slug: "dex-aggregator",
-        title: "DEX aggregator"
+    YIELD_FARM: {
+        slug: "yield-farm",
+        title: "Yield Farm"
     },
     YIELD_OPTIMIZER: {
         slug: "yield-optimizer",
         title: "Yield Optimizer"
     }
-
 }
