@@ -7,6 +7,48 @@ import {TAGS} from "../data/tags";
 import Link from "next/link";
 import Head from "next/head";
 
+export default function Home() {
+    const [active, setActive] = useState("")
+
+    function handleFilter(slug) {
+        if (active === slug) {
+            setActive("")
+        } else {
+            setActive(slug)
+        }
+    }
+
+    return (
+        <div className={"d-flex flex-column vh-100"}>
+            <Head>
+                <title>{APP_NAME}</title>
+                <meta property={"description"} content={"Find projects on the Avalanche blockchain."}/>
+            </Head>
+            <Navbar/>
+            <Header/>
+            <TagSelector active={active} setActive={handleFilter}/>
+            <Body active={active}/>
+            <Footer/>
+        </div>
+    )
+}
+
+
+function Navbar() {
+    return <nav className="navbar navbar-light bg-light shadow-sm">
+        <div className="container-fluid">
+            <Link href="/"><a className={"navbar-brand"}>{APP_NAME}</a></Link>
+        </div>
+    </nav>
+}
+
+function Header() {
+    return <header>
+        <h1 className={"text-center display-1 fw-bolder"}>{APP_NAME}</h1>
+        <p className={"text-center"}>Aggregating projects on Avalanche blockchain</p>
+    </header>
+}
+
 function TagSelector({active, setActive}) {
     function handleFilter(filter) {
         setActive(filter)
@@ -21,54 +63,14 @@ function TagSelector({active, setActive}) {
                     else
                         setActive(TAGS[tag].slug);
                 }
-                return <li className="nav-item" key={tag}>
-                    <Link href="#" ><a onClick={() => {
+                return <li className="nav-item shadow-sm me-3" key={tag}>
+                    <Link href="#"><a onClick={() => {
                         handleFilter(TAGS[tag].slug)
-                    }} className={`nav-link ${active === TAGS[tag].slug ? 'active' : ''}`} >{TAGS[tag].title}</a></Link>
+                    }} className={`nav-link ${active === TAGS[tag].slug ? 'active' : ''}`}>{TAGS[tag].title}</a></Link>
                 </li>
             })}
         </ul>
     </div>
-}
-
-export default function Home() {
-    const [active, setActive] = useState("")
-
-    function handleFilter(slug) {
-        if (active === slug) {
-            setActive("")
-        } else {
-            setActive(slug)
-        }
-    }
-
-    return (
-        <>
-            <Head>
-                <title>{APP_NAME}</title>
-                <meta property={"description"} content={"Find projects on the Avalanche blockchain."} />
-            </Head>
-            <Navbar/>
-            <Header/>
-            <TagSelector active={active} setActive={handleFilter}/>
-            <Body active={active}/>
-        </>
-    )
-}
-
-export function Navbar() {
-    return <nav className="navbar navbar-light bg-light">
-        <div className="container-fluid">
-            <Link href="/"><a className={"navbar-brand"}>{APP_NAME}</a></Link>
-        </div>
-    </nav>
-}
-
-export function Header() {
-    return <header>
-        <h1 className={"text-center display-1 fw-bolder"}>{APP_NAME}</h1>
-        <p className={"text-center"}>Aggregating projects on Avalanche blockchain</p>
-    </header>
 }
 
 export function Body(props) {
@@ -79,7 +81,7 @@ export function Body(props) {
         <div className="row" data-masonry='{"percentPosition": true }'>
             {PROJECTS.filter(project => project.tags.includes(activeTag) || activeTagSlug === "").map(project => {
                 return <div key={project.slug} className="col-md-4 mt-4">
-                    <div className="card">
+                    <div className="card shadow-sm border-0">
                         <div className="card-body">
                             <div className="d-flex">
                                 <img src={project.logo.src} width={38} height={38} className={"me-2"} loading={"lazy"}
@@ -103,4 +105,12 @@ export function Body(props) {
             })}
         </div>
     </div>
+}
+
+function Footer() {
+    return <footer className={"mt-auto bg-light shadow-sm"}>
+        <div className="text-center p-3">
+            © 2021, <a className="text-dark" href="https://mlxn.ltd/">MLXN Ltd</a>.
+        </div>
+    </footer>
 }

@@ -5,6 +5,7 @@ import ytsLogo from "../logos/yts.png"
 import pefiLogo from "../logos/pefi.png"
 import xavaLogo from "../logos/avalaunch.webp"
 import yakLogo from "../logos/yak.webp"
+import snowballLogo from "../logos/snowball.webp"
 import {Tag, TAGS} from "./tags";
 
 export type Project = {
@@ -64,6 +65,22 @@ export const PROJECTS : Project[] = [
     description: "An OG Avalanche DEX with NFT marketplace.",
     logo: xavaLogo,
     tags: [ TAGS.YIELD_FARM,TAGS.LAUNCHPAD]
+  },
+  {
+    slug: "yield-yak",
+    url: "https://yieldyak.com",
+    title: "Yield Yak",
+    description: "An Avalanche-based yield optimizer and dex aggregator.",
+    logo: yakLogo,
+    tags: [ TAGS.YIELD_FARM,TAGS.DEX_AGGREGATOR, TAGS.YIELD_OPTIMIZER]
+  },
+  {
+    slug: "snowball",
+    url: "https://snowball.network",
+    title: "Snowball Network",
+    description: "A feature rich DAO with yield farming, yield optimization, and more.",
+    logo: snowballLogo,
+    tags: [ TAGS.YIELD_FARM, TAGS.YIELD_OPTIMIZER, TAGS.NFT]
   },
   {
     slug: "yield-yak",
