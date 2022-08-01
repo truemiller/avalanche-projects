@@ -27,5 +27,14 @@ export const TAGS = {
     LAUNCHPAD: {
         slug :"launchpad",
         title: "Launchpad"
+    },
+    DEX_AGGREGATOR: {
+        slug: "dex-aggregator",
+        title: "DEX aggregator"
+    },
+    YIELD_OPTIMIZER: {
+        slug: "yield-optimizer",
+        title: "Yield Optimizer"
     }
+
 }
