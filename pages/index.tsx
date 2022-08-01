@@ -6,6 +6,19 @@ import {APP_NAME} from "../config/consts";
 import {TAGS} from "../data/tags";
 import Link from "next/link";
 import Head from "next/head";
+import {FAQS} from "../data/faqs";
+
+function FAQs() {
+    return <div className={"container"}>
+        <h2 className={"mt-3 fw-bolder"}>FAQs</h2>
+        {FAQS.map(faq=>{
+            return <>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+            </>
+        })}
+    </div>;
+}
 
 export default function Home() {
     const [active, setActive] = useState("")
@@ -28,6 +41,7 @@ export default function Home() {
             <Header/>
             <TagSelector active={active} setActive={handleFilter}/>
             <Body active={active}/>
+            <FAQs />
             <Footer/>
         </div>
     )
@@ -36,16 +50,16 @@ export default function Home() {
 
 function Navbar() {
     return <nav className="navbar navbar-light bg-light shadow-sm">
-        <div className="container-fluid">
+        <div className="container">
             <Link href="/"><a className={"navbar-brand"}>{APP_NAME}</a></Link>
         </div>
     </nav>
 }
 
 function Header() {
-    return <header>
-        <h1 className={"text-center display-1 fw-bolder"}>{APP_NAME}</h1>
-        <p className={"text-center"}>Aggregating projects on Avalanche blockchain</p>
+    return <header className={"container"}>
+        <h1 className={" display-1 fw-bolder"}>{APP_NAME}</h1>
+        <p className={""}>Aggregating projects on Avalanche blockchain</p>
     </header>
 }
 
@@ -55,7 +69,7 @@ function TagSelector({active, setActive}) {
     }
 
     return <div className={"container mt-3"}>
-        <ul className="nav nav-pills justify-content-center">
+        <ul className="nav nav-pills ">
             {Object.keys(TAGS).map(tag => {
                 const handleClick = () => {
                     if (active === TAGS[tag].slug)
@@ -78,6 +92,7 @@ export function Body(props) {
     const activeTag = Object.keys(TAGS).map(tag => TAGS[tag]).find(t => t.slug === activeTagSlug)
 
     return <div className="container">
+        <h2 className={"mt-3 fw-bolder"}>Projects</h2>
         <div className="row" data-masonry='{"percentPosition": true }'>
             {PROJECTS.filter(project => project.tags.includes(activeTag) || activeTagSlug === "").map(project => {
                 return <div key={project.slug} className="col-md-4 mt-4">
@@ -87,8 +102,8 @@ export function Body(props) {
                                 <img src={project.logo.src} width={38} height={38} className={"me-2"} loading={"lazy"}
                                      alt={`${project.title} logo`} title={`${project.title}`}/>
                                 <Link href={project.url}>
-                                    <a href="" className={"text-decoration-none"}>
-                                        <h2 className={"fw-bolder"}>{project.title}</h2>
+                                    <a className={"text-decoration-none"}>
+                                        <h3 className={"fw-bolder"}>{project.title}</h3>
                                     </a>
                                 </Link>
                             </div>
@@ -110,7 +125,7 @@ export function Body(props) {
 function Footer() {
     return <footer className={"mt-auto bg-light shadow-sm"}>
         <div className="text-center p-3">
-            © 2021, <a className="text-dark" href="https://mlxn.ltd/">MLXN Ltd</a>.
+            © 2022, <a className="" href="https://mlxn.ltd/">MLXN Ltd</a>. <a href={"https://t.me/truemiller1"}>Contact us via Telegram</a>.
         </div>
     </footer>
 }
