@@ -4,7 +4,6 @@ import {PROJECTS} from "../data/projects";
 import {Fragment, useState} from "react";
 import {APP_NAME} from "../config/consts";
 import {TAGS} from "../data/tags";
-import Masonry from "masonry"
 
 function TagSelector({active, setActive}) {
     function handleFilter(filter) {
