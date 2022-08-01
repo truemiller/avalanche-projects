@@ -5,6 +5,7 @@ import {Fragment, useState} from "react";
 import {APP_NAME} from "../config/consts";
 import {TAGS} from "../data/tags";
 import Link from "next/link";
+import Head from "next/head";
 
 function TagSelector({active, setActive}) {
     function handleFilter(filter) {
@@ -43,6 +44,10 @@ export default function Home() {
 
     return (
         <>
+            <Head>
+                <title>{APP_NAME}</title>
+                <meta property={"description"} content={"Find projects on the Avalanche blockchain."} />
+            </Head>
             <Navbar/>
             <Header/>
             <TagSelector active={active} setActive={handleFilter}/>
@@ -61,7 +66,7 @@ export function Navbar() {
 
 export function Header() {
     return <header>
-        <h1 className={"text-center display-1 fw-bolder"}>Avalanche Projects</h1>
+        <h1 className={"text-center display-1 fw-bolder"}>{APP_NAME}</h1>
         <p className={"text-center"}>Aggregating projects on Avalanche blockchain</p>
     </header>
 }
