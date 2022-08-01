@@ -4,6 +4,7 @@ import {PROJECTS} from "../data/projects";
 import {Fragment, useState} from "react";
 import {APP_NAME} from "../config/consts";
 import {TAGS} from "../data/tags";
+import Link from "next/link";
 
 function TagSelector({active, setActive}) {
     function handleFilter(filter) {
@@ -20,9 +21,9 @@ function TagSelector({active, setActive}) {
                         setActive(TAGS[tag].slug);
                 }
                 return <li className="nav-item" key={tag}>
-                    <a href="#" className={`nav-link ${active === TAGS[tag].slug ? 'active' : ''}`} onClick={() => {
+                    <Link href="#" className={`nav-link ${active === TAGS[tag].slug ? 'active' : ''}`} onClick={() => {
                         handleFilter(TAGS[tag].slug)
-                    }}>{TAGS[tag].title}</a>
+                    }}>{TAGS[tag].title}</Link>
                 </li>
             })}
         </ul>
@@ -53,7 +54,7 @@ export default function Home() {
 export function Navbar() {
     return <nav className="navbar navbar-light bg-light">
         <div className="container-fluid">
-            <a className="navbar-brand" href="/">{APP_NAME}</a>
+            <Link className="navbar-brand" href="/">{APP_NAME}</Link>
         </div>
     </nav>
 }
@@ -76,9 +77,9 @@ export function Body(props) {
                     <div className="card">
                         <div className="card-body">
                             <div className="d-flex">
-                                <img src={project.logo.src} width={38} height={38} className={"me-2"} loading={"lazy"} alt={`${project.title} logo`} title={`${project.title}`}/>
-                                <a href={project.url} className={"text-decoration-none"}><h2
-                                    className={"fw-bolder"}>{project.title}</h2></a>
+                                <Image src={project.logo.src} width={38} height={38} className={"me-2"} loading={"lazy"} alt={`${project.title} logo`} title={`${project.title}`}/>
+                                <Link href={project.url} className={"text-decoration-none"}><h2
+                                    className={"fw-bolder"}>{project.title}</h2></Link>
                             </div>
                             <div className={"mb-1"}>
                                 {project.tags.map(tag => {
