@@ -98,7 +98,7 @@ export function Body(props) {
         <h2 className={"mt-0 fw-bolder"}>Projects</h2>
         <div className="row" data-masonry='{"percentPosition": true }'>
             {PROJECTS.filter(project => project.tags.includes(activeTag) || activeTagSlug === "").map(project => {
-                return <div key={project.slug} className="col-md-4 mt-2">
+                return <div key={project.slug} className="col-md-4 mb-3">
                     <div className="card shadow-sm">
                         <div className="card-body">
                             <div className="d-flex">
