@@ -77,7 +77,7 @@ export function Body(props) {
                     <div className="card">
                         <div className="card-body">
                             <div className="d-flex">
-                                <Image src={project.logo.src} width={38} height={38} className={"me-2"} loading={"lazy"} alt={`${project.title} logo`} title={`${project.title}`}/>
+                                <img src={project.logo.src} width={38} height={38} className={"me-2"} loading={"lazy"} alt={`${project.title} logo`} title={`${project.title}`}/>
                                 <Link href={project.url} className={"text-decoration-none"}><h2
                                     className={"fw-bolder"}>{project.title}</h2></Link>
                             </div>
