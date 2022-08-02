@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
         title: "Penguin Finance",
         description: "A yield farm with games and other features.",
         logo: logos.pefi,
-        tags: [TAGS.YIELD_FARM]
+        tags: [TAGS.YIELD_FARM, TAGS.LAUNCHPAD]
     },
     {
         slug: "avalaunch",
@@ -91,5 +91,21 @@ export const PROJECTS: Project[] = [
         description: "An Avalanche-based NFT marketplace with AR/VR integrations.",
         logo: logos.kalao,
         tags: [TAGS.NFT, TAGS.NFT_MARKETPLACE]
+    },
+    {
+        slug: "avalanche-bridge",
+        url: "https://bridge.avax.network/",
+        title: "Avalanche Bridge",
+        description: "Avalanche's official bridge; transfer assets betweeen Avalanche and Ethereum.",
+        logo: logos.wavax,
+        tags: [TAGS.BRIDGE]
+    },
+    {
+        slug: "crabada",
+        url: "https://www.crabada.com/",
+        title: "Crabada",
+        description: "Battle, mine, breed and lend your crabs in Avalanche's most popular blockchain game.",
+        logo: logos.crabada,
+        tags: [TAGS.NFT, TAGS.NFT_MARKETPLACE, TAGS.GAME]
     },
 ]

@@ -16,8 +16,12 @@ export const TAGS = {
         slug: "dex-aggregator",
         title: "DEX aggregator"
     },
+    GAME: {
+        slug: "game",
+        title: "Game",
+    },
     LAUNCHPAD: {
-        slug :"launchpad",
+        slug: "launchpad",
         title: "Launchpad"
     },
     NFT: {

@@ -8,7 +8,8 @@ import yak from "../logos/yak.webp"
 import snowball from "../logos/snowball.webp"
 import nftrade from "../logos/nftrade.webp"
 import kalao from "../logos/kalao.webp"
-
+import wavax from "../logos/wavax.png"
+import crabada from "../logos/crabada.webp"
 
 module.exports = {
     elk,
@@ -20,5 +21,7 @@ module.exports = {
     yak,
     snowball,
     nftrade,
-    kalao
+    kalao,
+    wavax,
+    crabada
 }
